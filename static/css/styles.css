@@ -60,13 +60,14 @@ a {
 }
 
 .product-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .product-card {
-    width: 210px;
+    width: 100%;
+    height: 100%;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -84,7 +85,6 @@ a {
 
 .product-image {
     width: 100%;
-    height: 180px;
     object-fit: cover;
 }
 
@@ -160,3 +160,37 @@ a {
 .out-of-stock {
     background-color: darkgray;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-list {
+    display: inline-flex;
+    list-style: none;
+    gap: 10px;
+    padding: 0;
+}
+
+.pagination-list a,
+.pagination-list span {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    color: #000000;
+    text-decoration: none;
+}
+
+.pagination-list a:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.pagination-list .active span {
+    background-color: #000000;
+    color: white;
+    border-color: #000000;
+}
+

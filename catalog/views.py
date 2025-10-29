@@ -8,6 +8,7 @@ class ProductListView(generic.ListView):
     model = Product
     context_object_name = "product_list"
     template_name = "catalog/product_list.html"
+    paginate_by = 8
 
     def get_queryset(self):
         slug = self.kwargs.get("slug")
