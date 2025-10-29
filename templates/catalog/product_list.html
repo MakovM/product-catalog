@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="product-grid">
+  {% for product in product_list %}
+    <div class="product-card">
+      {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+      {% endif %}
+      <div class="product-info">
+        <h3>{{ product.name|truncatechars:35 }}</h3>
+        <p class="price">{{ product.price }} ₴</p>
+        <form method="post" action="">
+          {% csrf_token %}
+          <button type="submit">Додати в кошик</button>
+        </form>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

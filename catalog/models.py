@@ -25,7 +25,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["-available", "name"]
 
     def save(self, *args, **kwargs):
         self.available = self.stock > 0
