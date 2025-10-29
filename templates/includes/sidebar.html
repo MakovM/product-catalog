@@ -3,7 +3,7 @@
     <ul class="list-unstyled">
         <li class="mb-2">
             <a href="{% url 'products:product-list' %}"
-               class="{% if not current_category_slug %}text-primary font-weight-bold{% endif %}">
+               class="{% if not current_category_slug %}text-primary font-weight-bold{% else %}text-secondary{% endif %}">
                 All products
             </a>
         </li>

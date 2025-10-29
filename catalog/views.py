@@ -21,6 +21,18 @@ class ProductListView(generic.ListView):
         categories = Category.objects.all()
         context['categories'] = categories
 
-        context['current_category_slug'] = None
+        context['current_category_slug'] = self.kwargs.get("slug", "")
 
+        return context
+
+
+class ProductDetailView(generic.DetailView):
+    model = Product
+    context_object_name = "product"
+    template_name = "catalog/product_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # додаємо категорії для sidebar
+        context['categories'] = Category.objects.all()
         return context

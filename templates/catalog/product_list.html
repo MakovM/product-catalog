@@ -2,19 +2,25 @@
 {% block content %}
 <div class="product-grid">
   {% for product in product_list %}
-    <div class="product-card">
-      {% if product.image %}
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
-      {% endif %}
-      <div class="product-info">
-        <h3>{{ product.name|truncatechars:35 }}</h3>
-        <p class="price">{{ product.price }} ₴</p>
-        <form method="post" action="">
-          {% csrf_token %}
-          <button type="submit">Додати в кошик</button>
-        </form>
+    <a href="{% url "products:product_detail" product.slug %}">
+      <div class="product-card">
+        {% if product.image %}
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+        {% endif %}
+        <div class="product-info">
+          <h3>{{ product.name|truncatechars:35 }}</h3>
+          <p class="price">{{ product.price }} ₴</p>
+          <form method="post" action="">
+            {% csrf_token %}
+            {% if product.available %}
+                <button type="submit" class="add-to-cart">Add to cart</button>
+            {% else %}
+                <button class="out-of-stock" disabled>Not available</button>
+            {% endif %}
+          </form>
+        </div>
       </div>
-    </div>
+    </a>
   {% endfor %}
 </div>
 {% endblock %}
