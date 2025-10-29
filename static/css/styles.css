@@ -43,6 +43,11 @@ body {
 .sidebar {
     background-color: rgba(192, 192, 192, 0.3);
     width: 20%;
+    padding: 30px;
+}
+
+.sidebar-block {
+    margin: 0 auto;
 }
 .content {
     padding: 30px;
