@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+  {% for item in cart %}
+
+    <div class="cart-product-card">
+      <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+      <div class="cart-product-info">
+        <h5>{{ item.product.name }}</h5>
+        <br>
+        <span class="cart-product-price">{{ item.price }} ₴</span>
+      </div>
+
+      <div class="quantity">
+          <form action="{% url 'products:cart_decrease' item.product.id %}" method="post">
+            {% csrf_token %}
+              <button type="submit">-</button>
+          </form>
+        <span class="product-count">{{ item.quantity }}</span>
+          <form action="{% url 'products:cart_increase' item.product.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">+</button>
+          </form>
+      </div>
+
+      <div class="cart-product-info-end">
+        <form action="{% url 'products:cart_remove' item.product.id %}" method="post">
+          {% csrf_token %}
+            <button type="submit">Remove</button>
+        </form>
+        <br>
+        <span class="total-product-price">{{ item.total_price }} ₴</span>
+      </div>
+
+    </div>
+    <hr>
+  {% endfor %}
+  <div class="cart-total-cost">
+    {% if cart|length == 0 %}
+      <h3>Your cart is empty!</h3>
+    {% else %}
+      <h3>Total cost: {{ cart.total_cost }}</h3>
+    {% endif %}
+  </div>
+{% endblock %}

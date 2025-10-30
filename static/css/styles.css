@@ -25,6 +25,7 @@ a {
     font-weight: bold;
     display: flex;
     align-items: center;
+
 }
 .logo {
     width: 20%;
@@ -35,8 +36,15 @@ a {
     width: 80%;
     padding: 0 30px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+}
+
+.header-additional a {
+    color: white;
+}
+
+.header-additional a:hover {
+    color: rgba(192, 192, 192, 0.3);
 }
 
 .logo-txt {
@@ -192,5 +200,74 @@ a {
     background-color: #000000;
     color: white;
     border-color: #000000;
+}
+
+.cart-product-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-product-card img {
+    width: 15%;
+}
+
+.cart-product-info {
+    width: 45%;
+    height: 100%;
+}
+
+.cart-product-info-end {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 30px;
+}
+
+.cart-product-info-end button {
+    border: none;
+    padding: 10px 30px;
+}
+
+.cart-product-info-end button:hover {
+    background-color: #b8b8ba;
+}
+
+.quantity {
+    display: flex;
+    width: 10%;
+    gap: 10px;
+    justify-content: center;
+}
+
+.quantity button {
+    width: 30px;
+    border: none;
+}
+
+.quantity button:hover{
+    background-color: #b8b8ba;
+}
+.cart-product-price {
+    font-size: 18px;
+}
+
+.total-product-price {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cart-total-cost {
+    height: 60px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
 }
 

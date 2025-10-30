@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
 
+from catalog.cart import Cart
 from catalog.models import Category, Product
 
 
@@ -20,9 +21,9 @@ class ProductListView(generic.ListView):
         context = super().get_context_data(**kwargs)
 
         categories = Category.objects.all()
-        context['categories'] = categories
+        context["categories"] = categories
 
-        context['current_category_slug'] = self.kwargs.get("slug", "")
+        context["current_category_slug"] = self.kwargs.get("slug", "")
 
         return context
 
@@ -34,6 +35,48 @@ class ProductDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # додаємо категорії для sidebar
-        context['categories'] = Category.objects.all()
+        context["categories"] = Category.objects.all()
         return context
+
+
+class CartDetailView(generic.TemplateView):
+    template_name = "catalog/cart_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        cart = Cart(self.request)
+        context["cart"] = cart
+        context["categories"] = Category.objects.all()
+        return context
+
+
+class CartAddView(generic.View):
+    def post(self, request, product_id):
+        cart = Cart(request)
+        product = get_object_or_404(Product, id=product_id)
+        cart.add(product=product)
+        return redirect("products:cart_detail")
+
+
+class CartIncreaseView(generic.View):
+    def post(self, request, product_id):
+        cart = Cart(request)
+        product = get_object_or_404(Product, id=product_id)
+        cart.change_quantity(product=product, delta=1)
+        return redirect("products:cart_detail")
+
+
+class CartDecreaseView(generic.View):
+    def post(self, request, product_id):
+        cart = Cart(request)
+        product = get_object_or_404(Product, id=product_id)
+        cart.change_quantity(product=product, delta=-1)
+        return redirect("products:cart_detail")
+
+
+class CartRemoveView(generic.View):
+    def post(self, request, product_id):
+        cart = Cart(request)
+        product = get_object_or_404(Product, id=product_id)
+        cart.remove(product=product)
+        return redirect("products:cart_detail")
