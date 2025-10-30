@@ -10,7 +10,7 @@
         <div class="product-info">
           <h3>{{ product.name|truncatechars:35 }}</h3>
           <p class="price">{{ product.price }} ₴</p>
-          <form method="post" action="">
+          <form method="post" action="{% url 'products:add_to_cart' product.id %}">
             {% csrf_token %}
             {% if product.available %}
                 <button type="submit" class="add-to-cart">Add to cart</button>
