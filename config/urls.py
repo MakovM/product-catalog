@@ -19,10 +19,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from drf_spectacular.views import (SpectacularAPIView, SpectacularRedocView,
+                                   SpectacularSwaggerView)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("catalog.urls", namespace="products")),
+    path("api/", include("api.urls", namespace="api_products")),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    # Optional UI:
+    path('api/schema/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
 
 if settings.DEBUG:

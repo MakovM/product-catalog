@@ -16,8 +16,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_filters",
+    "rest_framework",
+    "drf_spectacular",
     "catalog",
-    "accounts",
+    "api",
 ]
 
 MIDDLEWARE = [
@@ -100,3 +103,21 @@ MEDIA_URL = "/media/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CART_SESSION_ID = "cart"
+
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": (
+        "rest_framework.pagination.PageNumberPagination"
+    ),
+    "PAGE_SIZE": 8,
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend"
+    ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Your Project API',
+    'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
