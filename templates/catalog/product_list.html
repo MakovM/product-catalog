@@ -4,9 +4,7 @@
   {% for product in product_list %}
     <a href="{% url "products:product_detail" product.slug %}">
       <div class="product-card">
-        {% if product.image %}
-          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
-        {% endif %}
+          <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
         <div class="product-info">
           <h3>{{ product.name|truncatechars:35 }}</h3>
           <p class="price">{{ product.price }} ₴</p>
