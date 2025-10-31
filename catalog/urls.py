@@ -1,8 +1,14 @@
 from django.urls import path
 
-from catalog.views import (CartAddView, CartDecreaseView, CartDetailView,
-                           CartIncreaseView, CartRemoveView, ProductDetailView,
-                           ProductListView)
+from catalog.views import (
+    CartAddView,
+    CartDecreaseView,
+    CartDetailView,
+    CartIncreaseView,
+    CartRemoveView,
+    ProductDetailView,
+    ProductListView,
+)
 
 app_name = "products"
 

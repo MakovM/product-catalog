@@ -25,7 +25,7 @@ class Product(models.Model):
         upload_to="products/",
         blank=True,
         null=True,
-        default="static/img/img.png"
+        default="static/img/img.png",
     )
     description = models.TextField(blank=True)
     stock = models.PositiveIntegerField(default=0)

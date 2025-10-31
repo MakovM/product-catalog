@@ -11,7 +11,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class ProductListSerializer(ProductSerializer):
     class Meta(ProductSerializer.Meta):
-        fields = ProductSerializer.Meta.fields + ("image", "price")
+        fields = ProductSerializer.Meta.fields + ("image_url", "price")
 
 
 class ProductDetailSerializer(ProductListSerializer):
