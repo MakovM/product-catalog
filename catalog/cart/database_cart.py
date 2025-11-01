@@ -39,7 +39,6 @@ class DatabaseCart:
         self._load_items()
         for item in self._items_cache:
             item.price = item.product.price
-            item.total_price = item.product.price * item.quantity
             yield item
 
     def __len__(self):
@@ -53,5 +52,5 @@ class DatabaseCart:
     def total_cost(self):
         self._load_items()
         return sum(
-            item.product.price * item.quantity for item in self._items_cache
+            item.total_price for item in self._items_cache
         )

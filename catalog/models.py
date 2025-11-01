@@ -72,6 +72,10 @@ class CartItem(models.Model):
     )
     quantity = models.PositiveIntegerField(default=1)
 
+    @property
+    def total_price(self):
+        return self.product.price * self.quantity
+
     class Meta:
         constraints = [
             models.UniqueConstraint(
