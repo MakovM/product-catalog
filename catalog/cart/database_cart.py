@@ -11,14 +11,14 @@ class DatabaseCart:
         if self._items_cache is None:
             self._items_cache = list(self.cart.items.select_related("product"))
 
-    def add(self, product):
+    def add(self, product, quantity=1):
         item, created = CartItem.objects.get_or_create(
             cart=self.cart, product=product
         )
         if not created:
-            item.quantity += 1
+            item.quantity += quantity
         else:
-            item.quantity = 1
+            item.quantity = quantity
         item.quantity = min(item.quantity, product.stock)
         item.save()
 
