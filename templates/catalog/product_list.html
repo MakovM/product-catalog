@@ -10,7 +10,7 @@
           <p class="price">{{ product.price }} ₴</p>
           <form method="post" action="{% url 'products:add_to_cart' product.id %}">
             {% csrf_token %}
-            {% if product.available %}
+            {% if product.is_available %}
                 <button type="submit" class="add-to-cart">Add to cart</button>
             {% else %}
                 <button class="out-of-stock" disabled>Not available</button>

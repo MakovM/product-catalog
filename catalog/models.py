@@ -29,12 +29,11 @@ class Product(models.Model):
     )
     description = models.TextField(blank=True)
     stock = models.PositiveIntegerField(default=0)
-    available = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["-available", "name"]
+        ordering = ["-stock", "name"]
 
     @property
     def image_url(self):
@@ -42,9 +41,10 @@ class Product(models.Model):
             return self.image.url
         return static("img/img.png")
 
-    def save(self, *args, **kwargs):
-        self.available = self.stock > 0
-        super().save(*args, **kwargs)
+    @property
+    def is_available(self):
+        return self.stock > 0
+
 
     def __str__(self):
         return self.name
