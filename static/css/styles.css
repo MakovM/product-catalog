@@ -37,6 +37,19 @@ a {
     padding: 0 30px;
     display: flex;
     justify-content: flex-end;
+    gap: 20px;
+}
+
+.logout-form button {
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.logout-form button:hover {
+    border: none;
+    background-color: black;
+    color: rgba(192, 192, 192, 0.3);
 }
 
 .header-additional a {
