@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
 
-from catalog.cart import Cart
+from catalog.cart.facade import Cart
 from catalog.models import Category, Product
 
 

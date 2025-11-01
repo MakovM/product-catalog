@@ -5,7 +5,7 @@ from django.conf import settings
 from catalog.models import Product
 
 
-class Cart:
+class SessionCart:
     def __init__(self, request):
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION_ID)
@@ -25,8 +25,10 @@ class Cart:
                 "price": str(product.price),
             }
         else:
-            self.cart[product_id]["quantity"] += 1
-        self.save()
+            new_quantity = self.cart[product_id]["quantity"] + 1
+            self.cart[product_id]["quantity"] = min(
+                new_quantity, product.stock
+            )
 
     def change_quantity(self, product, delta=1):
         product_id = str(product.id)
@@ -42,9 +44,6 @@ class Cart:
             )
             self.save()
 
-    def __len__(self):
-        return sum(item["quantity"] for item in self.cart.values())
-
     def __iter__(self):
         product_ids = self.cart.keys()
         products = Product.objects.filter(id__in=product_ids)
@@ -55,6 +54,9 @@ class Cart:
             item["price"] = Decimal(item["price"])
             item["total_price"] = item["price"] * item["quantity"]
             yield item
+
+    def __len__(self):
+        return sum(item["quantity"] for item in self.cart.values())
 
     def remove(self, product):
         product_id = str(product.id)
