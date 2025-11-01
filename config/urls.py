@@ -30,6 +30,7 @@ urlpatterns = [
     path("accounts/", include("accounts.urls", namespace="accounts")),
     path("", include("catalog.urls", namespace="products")),
     path("api/", include("api.urls", namespace="api_products")),
+    path("api/accounts/", include("accounts.api_urls", namespace="api_accounts")),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Optional UI:
     path(
