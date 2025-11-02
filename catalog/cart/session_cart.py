@@ -30,6 +30,8 @@ class SessionCart:
                 new_quantity, product.stock
             )
 
+        self.save()
+
     def change_quantity(self, product, delta=1):
         product_id = str(product.id)
         if product_id in self.cart:
