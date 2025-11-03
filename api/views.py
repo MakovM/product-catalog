@@ -8,7 +8,7 @@ from api.serializers import (
     ProductListSerializer,
     ProductSerializer,
 )
-from catalog.cart import Cart
+from catalog.cart.facade import Cart
 from catalog.models import Product
 
 

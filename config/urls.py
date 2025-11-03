@@ -27,8 +27,10 @@ from drf_spectacular.views import (
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("accounts/", include("accounts.urls", namespace="accounts")),
     path("", include("catalog.urls", namespace="products")),
     path("api/", include("api.urls", namespace="api_products")),
+    path("api/accounts/", include("accounts.api_urls", namespace="api_accounts")),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Optional UI:
     path(
@@ -49,6 +51,17 @@ if settings.DEBUG:
     urlpatterns = [
         path("__debug__/", include(debug_toolbar.urls))
     ] + urlpatterns
+
     urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
     )
+
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
+
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+    urlpatterns += staticfiles_urlpatterns()
+

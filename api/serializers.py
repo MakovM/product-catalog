@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from catalog.models import Product
+from catalog.models import Product, CartItem
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -19,7 +19,12 @@ class ProductDetailSerializer(ProductListSerializer):
         fields = ProductListSerializer.Meta.fields + ("description",)
 
 
-class CartItemSerializer(serializers.Serializer):
-    product = ProductListSerializer()
-    quantity = serializers.IntegerField()
-    total_price = serializers.DecimalField(max_digits=10, decimal_places=2)
+class CartItemSerializer(serializers.ModelSerializer):
+    product = serializers.StringRelatedField()
+
+    class Meta:
+        model = CartItem
+        fields = ("product", "quantity", "total_price")
+
+    def get_total_price(self, obj):
+        return obj.total_price
