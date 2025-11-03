@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block sidebar %}
+  {%  include "includes/sidebar.html" %}
+{% endblock %}
+{% block content %}
+<div class="product-grid">
+  {% for product in product_list %}
+    <a href="{% url "products:product_detail" product.slug %}">
+      <div class="product-card">
+          <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
+        <div class="product-info">
+          <h3>{{ product.name|truncatechars:35 }}</h3>
+          <p class="price">{{ product.price }} ₴</p>
+          <form method="post" action="{% url 'products:add_to_cart' product.id %}">
+            {% csrf_token %}
+            {% if product.is_available %}
+                <button type="submit" class="add-to-cart">Add to cart</button>
+            {% else %}
+                <button class="out-of-stock" disabled>Not available</button>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}

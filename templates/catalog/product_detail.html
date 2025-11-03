@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block sidebar %}
+  {%  include "includes/sidebar.html" %}
+{% endblock %}
+{% block content %}
+<div class="product-detail">
+  <img src="{{ product.image_url }}" alt="{{ product.name }}">
+  <div class="info">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p>{{ product.price }} ₴</p>
+  <form action="{% url 'products:add_to_cart' product.id %}" method="post">
+  {% csrf_token %}
+  {% if product.is_available %}
+      <button class="add-to-cart">Add to cart</button>
+  {% else %}
+      <button class="out-of-stock" disabled>Not available</button>
+  {% endif %}
+  </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,287 @@
+body {
+    margin: 0;
+    background-color: #fdfdfd;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    min-height: 60px;
+    z-index: 999;
+    width: 100%;
+    background-color: #000000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+
+}
+.logo {
+    width: 20%;
+    text-align: center;
+    margin: 0;
+}
+.header-additional {
+    width: 80%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.logout-form button {
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.logout-form button:hover {
+    border: none;
+    background-color: black;
+    color: rgba(192, 192, 192, 0.3);
+}
+
+.header-additional a {
+    color: white;
+}
+
+.header-additional a:hover {
+    color: rgba(192, 192, 192, 0.3);
+}
+
+.logo-txt {
+    margin: 0;
+    font-weight: bolder;
+    color: white;
+}
+
+.sidebar {
+    background-color: rgba(192, 192, 192, 0.3);
+    width: 20%;
+    padding: 30px;
+}
+
+.sidebar-block {
+    margin: 0 auto;
+}
+.content {
+    padding: 30px;
+    width: 80%;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-info button {
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.product-detail {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-detail img {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+}
+
+.product-detail h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #333;
+}
+
+.product-detail p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.product-detail button {
+    align-self: flex-end;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+.add-to-cart {
+    background-color: black;
+    cursor: pointer;
+}
+.add-to-cart:hover {
+    background-color: silver;
+}
+
+.out-of-stock {
+    background-color: darkgray;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-list {
+    display: inline-flex;
+    list-style: none;
+    gap: 10px;
+    padding: 0;
+}
+
+.pagination-list a,
+.pagination-list span {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    color: #000000;
+    text-decoration: none;
+}
+
+.pagination-list a:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.pagination-list .active span {
+    background-color: #000000;
+    color: white;
+    border-color: #000000;
+}
+
+.cart-product-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-product-card img {
+    width: 15%;
+}
+
+.cart-product-info {
+    width: 45%;
+    height: 100%;
+}
+
+.cart-product-info-end {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 30px;
+}
+
+.cart-product-info-end button {
+    border: none;
+    padding: 10px 30px;
+}
+
+.cart-product-info-end button:hover {
+    background-color: #b8b8ba;
+}
+
+.quantity {
+    display: flex;
+    width: 10%;
+    gap: 10px;
+    justify-content: center;
+}
+
+.quantity button {
+    width: 30px;
+    border: none;
+}
+
+.quantity button:hover{
+    background-color: #b8b8ba;
+}
+.cart-product-price {
+    font-size: 18px;
+}
+
+.total-product-price {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cart-total-cost {
+    height: 60px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+}
+

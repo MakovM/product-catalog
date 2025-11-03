@@ -1,0 +1,315 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$opCMANN5UqODWNVzfdc6rW$7y8qMUOQwZAoc1rsDepV10NNbr4D6yNr0M/Q0hpiar8=",
+        "last_login": "2025-10-29T18:34:13.622Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@admin.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-10-29T18:33:42.484Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Game controllers",
+        "slug": "game-controllers"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+        "name": "Tablets",
+        "slug": "tablets"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+        "name": "Headphones",
+        "slug": "headphones"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+        "name": "Keyboards",
+        "slug": "keyboards"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+        "name": "Monitors",
+        "slug": "monitors"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "name": "Wireless Gamepad Trust GXT 542 Muta Black",
+        "slug": "wireless-gamepad-trust-gxt-542-muta-black",
+        "category": 2,
+        "price": "1599.00",
+        "image": "products/photo_2025-10-29_222839744.png",
+        "description": "You have not one, not two, but three ways to connect Muta to your deviceтАФthe choice is yours. Choose between a 2.4 GHz USB receiver, Bluetooth, or a USB cableтАФthe choice is yours!",
+        "stock": 1,
+        "created_at": "2025-10-29T20:33:55.774Z",
+        "updated_at": "2025-10-29T21:05:17.923Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "name": "DualSense Wireless Controller for PS5 White",
+        "slug": "dualsense-wireless-controller-for-ps5-white",
+        "category": 2,
+        "price": "3399.00",
+        "image": "products/photo_2025-10-29_223545866.png",
+        "description": "DualSense Wireless Controller\r\n\r\nExperience incredible immersion in the gaming world with the new PS5 controller and its innovative features.",
+        "stock": 5,
+        "created_at": "2025-10-29T20:36:19.490Z",
+        "updated_at": "2025-10-29T21:05:34.677Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+        "name": "Microsoft Xbox Wireless Controller Black",
+        "slug": "microsoft-xbox-wireless-controller-black",
+        "category": 2,
+        "price": "3299.00",
+        "image": "products/photo_2025-10-29_224047200.png",
+        "description": "Plug and play\r\nExperience the redesigned Xbox wireless controller, featuring sculpted surfaces and refined geometry for greater comfort during gameplay. Play wirelessly or use the included 9-foot USB-C cable for wired play. Stay on target with the hybrid D-pad and textured grip on the buttons, bumpers, and back panel.",
+        "stock": 5,
+        "created_at": "2025-10-29T20:41:05.536Z",
+        "updated_at": "2025-10-29T21:05:42.841Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+        "name": "Thrustmaster T80 FERRARI 488 GTB EDITION steering wheel and pedals",
+        "slug": "thrustmaster-t80-ferrari-488-gtb-edition-steering-wheel-and-pedals",
+        "category": 2,
+        "price": "6999.00",
+        "image": "products/photo_2025-10-29_224145178.png",
+        "description": "Thrustmaster T 80\r\nThrustmaster T 80 is a steering wheel and pedals used by gamers for racing games. This model is the most popular. It features a convenient design, feels comfortable in your hands thanks to its textured rubber coating, and has a sleek, modern design. The model accurately replicates the design of the Ferrari 488 GTB steering wheel, only in miniature format. The size of the accessory has been reduced to 28 cm, allowing you to feel like a real racer.",
+        "stock": 0,
+        "created_at": "2025-10-29T20:42:00.428Z",
+        "updated_at": "2025-10-29T21:04:52.098Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+        "name": "HORI Onyx+ Wireless Gamepad",
+        "slug": "hori-onyx-wireless-gamepad-for-playstation-4",
+        "category": 2,
+        "price": "2499.00",
+        "image": "products/photo_2025-10-29_224257074.png",
+        "description": "The ONYX Plus wireless controller is the next step in PS4 gaming. For years, PlayStation 4 gamers have been limited to one type of controller. Today, HORI is changing that with the ONYX Plus, an ergonomic 2.4 GHz wireless controller designed from the ground up with the needs of today's gamers in mind. The wide body fits comfortably in your hands, and the offset analog button layout is reminiscent of more modern console controllers. A 3.5 mm audio jack for full immersion in audio and strategic conversations between players. New PC compatibility for all types of games. For gamers who haven't yet purchased a PlayStation 4, despite the large collection of exclusive games for this platform, now is the time to invest. Enjoy exclusive PlayStation 4 games on a controller that suits your playing style тАФ it's all in your hands. Officially licensed by Sony.",
+        "stock": 0,
+        "created_at": "2025-10-29T20:43:14.100Z",
+        "updated_at": "2025-10-29T21:05:08.140Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+        "name": "Tablet Lenovo Tab M11 WiFi 8/128Gb Luna Grey + Pen 2024",
+        "slug": "tablet-lenovo-tab-m11-wifi-8128gb-luna-grey-pen-2024",
+        "category": 3,
+        "price": "8549.00",
+        "image": "products/photo_2025-10-29_225803408.png",
+        "description": "Embark on a smart learning journey with the Lenovo Tab M11 tablet! Excellent multitasking, smart notes, and exciting entertainmentтАФall combined in one device for curious minds.",
+        "stock": 10,
+        "created_at": "2025-10-29T20:58:10.300Z",
+        "updated_at": "2025-10-29T21:05:59.496Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+        "name": "Tablet Samsung Galaxy Tab A9+ WiFi 6/128GB 2025 Gray",
+        "slug": "tablet-samsung-galaxy-tab-a9-wifi-6128gb-2025-gray",
+        "category": 3,
+        "price": "8999.00",
+        "image": "products/photo_2025-10-29_230140472.png",
+        "description": "Immerse yourself in the world of entertainment. The Galaxy Tab A9+'s large, bright screen with a high refresh rate ensures clear and smooth playback. Even in direct sunlight, enjoy your favorite content without compromise.",
+        "stock": 10,
+        "created_at": "2025-10-29T21:02:09.887Z",
+        "updated_at": "2025-10-29T21:02:09.887Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+        "name": "Tablet Apple iPad 11\" WiFi 128GB Silver",
+        "slug": "tablet-apple-ipad-11-wifi-128gb-silver",
+        "category": 3,
+        "price": "17499.00",
+        "image": "products/photo_2025-10-29_230919716.png",
+        "description": "Now, with the super-fast A16 chip, iPad is capable of more than ever. Get things done, express yourself, and immerse yourself in your favorite activities тАФ all on a stunning Liquid Retina display. And with the right accessories designed specifically for iPad, you can add even more variety to your everyday activities.",
+        "stock": 0,
+        "created_at": "2025-10-29T21:09:41.691Z",
+        "updated_at": "2025-10-29T21:09:41.691Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+        "name": "Tablet Teclast P30T KIT 10.1 4/128Gb Gray",
+        "slug": "tablet-teclast-p30t-kit-101-4128gb-gray",
+        "category": 3,
+        "price": "5699.00",
+        "image": "products/photo_2025-10-29_231022164.png",
+        "description": "The Teclast P30T All-In-One KIT is a tablet for learning that comes with a Bluetooth mouse, keyboard, headphones, book cover, tablet stand, and stylusтАФthe perfect solution for students and schoolchildren. This comprehensive package provides maximum convenience and efficiency in the learning process. The keyboard and mouse allow you to complete tasks quickly and comfortably, the stylus promotes accuracy when taking notes or drawing, and the book cover and stand ensure convenient use of the tablet anywhere. This comprehensive solution will help students focus on their studies and unlock their potential.",
+        "stock": 0,
+        "created_at": "2025-10-29T21:10:38.869Z",
+        "updated_at": "2025-10-29T21:10:38.869Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+        "name": "Tablet Lenovo Tab One 4/128 WiFi Luna Grey + Clear Case",
+        "slug": "tablet-lenovo-tab-one-4128-wifi-luna-grey-clear-case",
+        "category": 3,
+        "price": "5499.00",
+        "image": "products/photo_2025-10-29_231623725.png",
+        "description": "The Lenovo Tab One is an affordable tablet for everyday use. Equipped with a bright display, user-friendly interface, and long-lasting battery, it is ideal for watching videos, surfing the web, and learning. Compact and lightweight, this device will be a reliable companion at home or on the go.",
+        "stock": 3,
+        "created_at": "2025-10-29T21:16:42.885Z",
+        "updated_at": "2025-10-29T21:16:42.885Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+        "name": "Monitor 23.8\" ASUS VA249HG",
+        "slug": "monitor-238-asus-va249hg",
+        "category": 6,
+        "price": "3895.00",
+        "image": "products/photo_2025-10-29_232020039.png",
+        "description": "The ASUS VA249HG is a modern 23.8-inch gaming monitor with Full HD resolution. Its IPS panel provides wide viewing angles, and support for Adaptive-Sync, a 120Hz refresh rate, and a 1ms response time (MPRT) means high-quality images when displaying dynamic scenes in movies and games. This model also has excellent ergonomics, as it features Eye Care technologies: blue light filtering and flicker minimization.",
+        "stock": 0,
+        "created_at": "2025-10-29T21:20:33.812Z",
+        "updated_at": "2025-10-29T21:20:33.812Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+        "name": "Monitor 27\" 2E GAMING G2724BV",
+        "slug": "monitor-27-2e-gaming-g2724bv",
+        "category": 6,
+        "price": "6737.00",
+        "image": "",
+        "description": "A 27-inch diagonal, VA matrix, and a wide color gamut of 16.7 million colors guarantee an incredibly realistic picture. The resolution is 2560x1440 pixels, but what's even cooler is the 165 Hz refresh rate and 1 ms response time. This means that no detail of your favorite game will go unnoticed, and movements will be instantly reflected on the screen. The 4000:1 contrast ratio adds depth to colors, and the 300 cd/m┬▓ brightness ensures image brightness.",
+        "stock": 5,
+        "created_at": "2025-10-29T21:21:45.858Z",
+        "updated_at": "2025-10-31T11:37:05.954Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+        "name": "Monitor 27\" ASUS TUF Gaming VG27AQ5A",
+        "slug": "monitor-27-asus-tuf-gaming-vg27aq5a",
+        "category": 6,
+        "price": "9439.00",
+        "image": "products/photo_2025-10-29_232242859.png",
+        "description": "The TUF Gaming VG27AQ5A gaming monitor features a 27-inch IPS panel with QHD resolution and a 210Hz refresh rate. Support for ASUS Extreme Low Motion Blur Sync (ELMB Sync), AMD FreeSync Premium, and VESA AdaptiveSync technologies ensures incredibly smooth gameplay. In addition, this monitor supports HDR technology and reproduces 95% of the DCI-P3 color space, which means excellent color quality and high contrast.",
+        "stock": 10,
+        "created_at": "2025-10-29T21:23:04.078Z",
+        "updated_at": "2025-10-29T21:23:04.078Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+        "name": "Monitor 27\" SAMSUNG Odyssey G5 S27CG550",
+        "slug": "monitor-27-samsung-odyssey-g5-s27cg550",
+        "category": 6,
+        "price": "8199.00",
+        "image": "products/photo_2025-10-29_232349528.png",
+        "description": "Your gaming world will become more realistic than ever before. QHD resolution, which is 1.7 times higher than Full HD pixel density, provides incredibly detailed, crisp images. Enjoy a fuller view and more space to take in all the action.",
+        "stock": 5,
+        "created_at": "2025-10-29T21:24:07.429Z",
+        "updated_at": "2025-10-29T21:24:07.429Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 16,
+    "fields": {
+        "name": "Monitor 23.8\" LG UltraGear 24GS60F-B",
+        "slug": "monitor-238-lg-ultragear-24gs60f-b",
+        "category": 6,
+        "price": "5199.00",
+        "image": "products/photo_2025-10-29_232446491.png",
+        "description": "A gaming monitor that puts you ahead of the starting line with a 180Hz refresh rate.",
+        "stock": 0,
+        "created_at": "2025-10-29T21:25:03.557Z",
+        "updated_at": "2025-10-29T21:25:03.557Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+        "name": "Headphones Sony WH-1000XM5 Blue Bluetooth",
+        "slug": "headphones-sony-wh-1000xm5-blue-bluetooth",
+        "category": 4,
+        "price": "15999.00",
+        "image": "products/photo_2025-10-29_232711922.png",
+        "description": "The WH-1000XM5 headphones are equipped with two processors that control eight microphones, a feature that automatically adjusts noise cancellation depending on the fit and ambient sounds. This provides a new level of uninterrupted sound, both when listening to music and during calls.",
+        "stock": 2,
+        "created_at": "2025-10-29T21:27:28.637Z",
+        "updated_at": "2025-10-30T20:14:25.303Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 18,
+    "fields": {
+        "name": "Keyboard Keychron C3 Pro 87Key, K Pro Red, USB-A, QMK, Hot-swap, EN/UKR, RGB, Black",
+        "slug": "keyboard-keychron-c3-pro-87key-k-pro-red-usb-a-qmk-hot-swap-enukr-rgb-black",
+        "category": 5,
+        "price": "1799.00",
+        "image": "products/photo_2025-10-29_232852797.png",
+        "description": "The Keychron C3 Pro is a wired QMK/VIA mechanical keyboard with a classic TKL layout. It is fully programmable and compatible with Mac, Windows, and Linux systems, making it ideal for gaming and work!",
+        "stock": 0,
+        "created_at": "2025-10-29T21:29:06.456Z",
+        "updated_at": "2025-10-29T21:29:06.456Z"
+    }
+}
+]
